@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Panel Admina
+
+  body
+    table
+      - @users.each do |a|
+        tr
+          th ID
+          th e-mail
+          th admin
+          th aktywacja konta
+
+        tr
+          td =a.id
+          td =a.email
+          - if a.admin==true
+            td
+              = image_tag("tak.png", size: "40x40")
+          - else
+            td
+              = image_tag("nie.png", size: "40x40")
+          - if a.account_activation==true
+            td
+              = image_tag("tak.png", size: "40x40")
+          - else
+            td
+              = image_tag("nie.png", size: "40x40")
+          td =button_to "Aktywacja", action: "update", method: :patch
+
+

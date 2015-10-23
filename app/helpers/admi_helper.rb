@@ -1,0 +1,2 @@
+module AdmiHelper
+end

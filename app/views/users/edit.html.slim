@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Edycja użytkownika
+
+  body
+
+    = form_for :user, url: user_path(@user), method: :patch do |f|
+      = f.label :admin
+      = f.che :admin
+      = f.label :account_activation
+      = f.text_area :account_activation
+      = f.submit
+
+
+    = link_to 'Back', href="/admins/index"
