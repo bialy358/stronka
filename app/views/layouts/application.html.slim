@@ -23,7 +23,7 @@ html
         li#przycisk
           =button_to 'Wyloguj', destroy_user_session_path, method: :delete
 
-        - if current_user && current_user.admin?
+        - if current_user && !current_user.admin?
           li#przycisk
             =link_to "Admin", users_path
     .jumbotron
